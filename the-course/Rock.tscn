@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbe6jx0utecrc"]
+
+[ext_resource type="Texture2D" uid="uid://ciiv7tvydy0ci" path="res://assets/PNG/Sprites/Meteors/spaceMeteors_001.png" id="1_yh44g"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cmu37"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-237, -55)
+scale = Vector2(1, 1)
+disable_mode = 1
+physics_material_override = SubResource("PhysicsMaterial_cmu37")
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(233, 58)
+texture = ExtResource("1_yh44g")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(233, 60)
+scale = Vector2(1.0119, 1.00152)
+polygon = PackedVector2Array(-69.1765, 95.8539, 0, 102.843, 65.2235, 81.8752, 100.8, 35.9452, 104.753, -32.9498, 64, -85, 3.95294, -106.837, -68.1883, -83.8721, -105.741, -34.9467, -100.8, 28.9559)

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://wmk844cdn7qn"]
+
+[ext_resource type="Script" path="res://character_body_2d.gd" id="1_hv71l"]
+[ext_resource type="PackedScene" uid="uid://brrs4rhugo12h" path="res://bullet.tscn" id="2_6jhd2"]
+[ext_resource type="Texture2D" uid="uid://b2a1y1atnx8in" path="res://assets/PNG/Sprites/Ships/spaceShips_007.png" id="2_v1acr"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("bullet_spawn_point")]
+position = Vector2(457, 347)
+platform_wall_layers = 255
+script = ExtResource("1_hv71l")
+bullet_scene = ExtResource("2_6jhd2")
+bullet_spawn_point = NodePath("bullet point")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -2)
+polygon = PackedVector2Array(13, -19, 11, -14, 6, -14, 6, -8, -6, -8, -7, -14, -11, -14, -13, -19, -15, -18, -12, -7, -14, -5, -10, -1, -11, 3, -19, 10, -19, 19, -14, 19, -9, 13, -5, 13, -5, 8, 5, 8, 5, 13, 9, 13, 14, 19, 19, 19, 19, 10, 11, 3, 11, -2, 14, -5, 12, -8, 15, -18)
+
+[node name="DA SHIP" type="Sprite2D" parent="CollisionPolygon2D"]
+scale = Vector2(0.226744, 0.248344)
+texture = ExtResource("2_v1acr")
+
+[node name="Camera2D" type="Camera2D" parent="CollisionPolygon2D/DA SHIP"]
+position = Vector2(0, -8.05334)
+
+[node name="bullet point" type="Marker2D" parent="."]
+position = Vector2(0, -19)

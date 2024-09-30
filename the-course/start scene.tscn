@@ -1,12 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://glbwovgcv882"]
 
-[ext_resource type="Texture2D" uid="uid://dnku55dcgmtb2" path="res://icon.svg" id="1_20vj0"]
-[ext_resource type="Script" path="res://sprite_2d.gd" id="2_h8g8k"]
+[ext_resource type="PackedScene" uid="uid://wmk844cdn7qn" path="res://Lil spaceship.tscn" id="1_4xgjy"]
+[ext_resource type="PackedScene" uid="uid://dbe6jx0utecrc" path="res://Rock.tscn" id="3_t1uia"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Root" type="Node2D"]
+position = Vector2(0, -1)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(490, 284)
-texture = ExtResource("1_20vj0")
-script = ExtResource("2_h8g8k")
-speed = 20.0
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_4xgjy")]
+
+[node name="Rock" parent="." instance=ExtResource("3_t1uia")]
+position = Vector2(410, 539)
+
+[node name="Rock2" parent="." instance=ExtResource("3_t1uia")]
+position = Vector2(912, 735)
+
+[node name="Rock3" parent="." instance=ExtResource("3_t1uia")]
+position = Vector2(648, 680)
