@@ -8,6 +8,7 @@
 size = Vector2(55, 53)
 
 [node name="dude" type="CharacterBody2D" node_paths=PackedStringArray("bullet_spawn") groups=["dude"]]
+rotation = 4.98324
 collision_mask = 6
 motion_mode = 1
 script = ExtResource("1_prwsp")
@@ -20,16 +21,18 @@ forward_input = "forward"
 back_input = "back"
 bullet_scene = ExtResource("2_62y41")
 bullet_spawn = NodePath("Marker2D")
+lives = 100
+ammo = 100
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_gm47b")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(0, -38)
+position = Vector2(-0.0487213, -48.7647)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.3
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-1, 0)
@@ -37,7 +40,7 @@ position_smoothing_enabled = true
 
 [node name="Synth2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_62y41")
-pitch_scale = 1.83402
+pitch_scale = 1.78439
 autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
